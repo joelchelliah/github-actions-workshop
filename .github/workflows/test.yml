@@ -1,5 +1,5 @@
 # The "display name", shown in the GitHub UI
-name: Build and test
+name: Test
 
 # Trigger, run on push on any branch
 on:
