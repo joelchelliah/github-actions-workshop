@@ -36,7 +36,7 @@ func main() {
 	http.HandleFunc("/hello", helloHandler)
 
 	port := "8888"
-	fmt.Printf("Running on port %s", port)
+	fmt.Printf("Running on port %s ...", port)
 
 	err := http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 	if errors.Is(err, http.ErrServerClosed) {
