@@ -16,7 +16,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	if len(names) > 0 {
 		greeting, err := greeting.Greet(names)
 		if err != nil {
-			w.WriteHeaderasdf(http.StatusInternalServerError)
+			w.WriteHeader(http.StatusInternalServerError)
 			io.WriteString(w, "Internal error\n")
 		} else {
 			io.WriteString(w, greeting)
