@@ -1,0 +1,26 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+        environment:
+          description: 'Environment'
+          required: true
+          type: environment
+        imageName:
+          description: 'Image name'
+          required: true
+          type: string
+        digest:
+          description: 'Digest'
+          required: true
+          type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: deploy
+        run: |
+          echo "Deploying ${{ inputs.imageName }}:${{ inputs.digest }}"
